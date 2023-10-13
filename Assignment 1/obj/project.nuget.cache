@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "eWSv+4UzInNPcmeYFPmLx949IsON1yPcVhKhXBjEjr0gfoMMShGeZrqJb23gDh00As6beG16ktF9GWAYPei9EQ==",
+  "dgSpecHash": "RyK4mKFfu0stdH+GnheZ9Sa40xsO+R92GeY2mWb2KNsgvHr8AFiUmLVQPTmQ8Q3xLNPYt38DXIo+KwqBGmDTNg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\fishewil\\Desktop\\Computer Graphics and Animation\\Assignment 1\\Graphics-Assignment-1\\Assignment 1\\Assignment 1.csproj",
+  "projectFilePath": "C:\\Users\\fishewil\\Desktop\\Computer Graphics and Animation\\Assignment 1\\Graphics-Assignment-1\\Assignment 1\\TagYouAreIt.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\fishewil\\.nuget\\packages\\libuv\\1.9.1\\libuv.1.9.1.nupkg.sha512",
     "C:\\Users\\fishewil\\.nuget\\packages\\microsoft.codeanalysis.analyzers\\1.1.0\\microsoft.codeanalysis.analyzers.1.1.0.nupkg.sha512",

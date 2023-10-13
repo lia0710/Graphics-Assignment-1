@@ -72,3 +72,6 @@ C:\Users\fishewil\Desktop\Computer Graphics and Animation\Assignment 1\Graphics-
 C:\Users\fishewil\Desktop\Computer Graphics and Animation\Assignment 1\Graphics-Assignment-1\Assignment 1\obj\Debug\net6.0-windows\Assignment 1.pdb
 C:\Users\fishewil\Desktop\Computer Graphics and Animation\Assignment 1\Graphics-Assignment-1\Assignment 1\obj\Debug\net6.0-windows\Assignment 1.genruntimeconfig.cache
 C:\Users\fishewil\Desktop\Computer Graphics and Animation\Assignment 1\Graphics-Assignment-1\Assignment 1\obj\Debug\net6.0-windows\ref\Assignment 1.dll
+C:\Users\fishewil\Desktop\Computer Graphics and Animation\Assignment 1\Graphics-Assignment-1\Assignment 1\bin\Debug\net6.0-windows\Content\Arial 12.xnb
+C:\Users\fishewil\Desktop\Computer Graphics and Animation\Assignment 1\Graphics-Assignment-1\Assignment 1\bin\Debug\net6.0-windows\Content\Assignment1Cube.xnb
+C:\Users\fishewil\Desktop\Computer Graphics and Animation\Assignment 1\Graphics-Assignment-1\Assignment 1\bin\Debug\net6.0-windows\Content\Sphere.xnb

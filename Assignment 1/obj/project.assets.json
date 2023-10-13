@@ -7530,9 +7530,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\fishewil\\Desktop\\Computer Graphics and Animation\\Assignment 1\\Graphics-Assignment-1\\Assignment 1\\Assignment 1.csproj",
-      "projectName": "Assignment 1",
-      "projectPath": "C:\\Users\\fishewil\\Desktop\\Computer Graphics and Animation\\Assignment 1\\Graphics-Assignment-1\\Assignment 1\\Assignment 1.csproj",
+      "projectUniqueName": "C:\\Users\\fishewil\\Desktop\\Computer Graphics and Animation\\Assignment 1\\Graphics-Assignment-1\\Assignment 1\\TagYouAreIt.csproj",
+      "projectName": "TagYouAreIt",
+      "projectPath": "C:\\Users\\fishewil\\Desktop\\Computer Graphics and Animation\\Assignment 1\\Graphics-Assignment-1\\Assignment 1\\TagYouAreIt.csproj",
       "packagesPath": "C:\\Users\\fishewil\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\fishewil\\Desktop\\Computer Graphics and Animation\\Assignment 1\\Graphics-Assignment-1\\Assignment 1\\obj\\",
       "projectStyle": "PackageReference",
