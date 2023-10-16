@@ -14,6 +14,7 @@ namespace Assignment_1
         public Matrix world = Matrix.Identity;
         float x = 0;
         float z = 0;
+        float speed = 0.05f;
 
         public Cube() 
         {
@@ -22,9 +23,10 @@ namespace Assignment_1
             double xdistance = Math.Floor(random.NextSingle()*6);
             if (negative.Next(2) == 0) { xdistance *= -1; }
             x = (float)xdistance;
-            double zdistance = Math.Floor(random.NextSingle() * 6);
+            //x between -5 and 5
+            //radius of 5 from the sphere
+            double zdistance = Math.Sqrt(25-(xdistance*xdistance));
             if (negative.Next(2) == 0) { zdistance *= -1; }
-            z = (float)zdistance;
             world = Matrix.CreateTranslation(new Vector3(0, 0, 0));
             world *= Matrix.CreateTranslation((float)xdistance, 0, (float)zdistance);
         }
@@ -35,6 +37,28 @@ namespace Assignment_1
             //sqrt ([x2 - x1]^2 + [y2 - y1]^2)
             float distance = (float)Math.Sqrt( ((x - sphere.x) * (x - sphere.x)) + ((z - sphere.z) * (z - sphere.z)));
             return distance;
+        }
+
+        public void checkMove(Sphere sphere)
+        {
+            if (getDistance(sphere) > 11)
+            {
+                //move closer
+                if (z > sphere.z) { world *= Matrix.CreateTranslation(0, 0, -speed); z -= speed; }
+                else { world *= Matrix.CreateTranslation(0, 0, speed); z += speed; }
+
+                if (x > sphere.x) { world *= Matrix.CreateTranslation(-speed, 0, 0); x -= speed; }
+                else { world *= Matrix.CreateTranslation(speed, 0, 0); x += speed; }
+            }
+            else if (getDistance(sphere) < 10)
+            {
+                //move away
+                if (z > sphere.z) { world *= Matrix.CreateTranslation(0, 0, speed); z += speed; }
+                else { world *= Matrix.CreateTranslation(0, 0, -speed); z -= speed; }
+
+                if (x > sphere.x) { world *= Matrix.CreateTranslation(speed, 0, 0); x += speed; }
+                else { world *= Matrix.CreateTranslation(-speed, 0, 0); x -= speed; }
+            }
         }
     }
 }

@@ -90,20 +90,14 @@ namespace Assignment_1
                 mesh.Draw();
             }
 
-            for (int i = 0; i < 10; i++) 
+            for (int i = 0; i < 1; i++) 
             {
                 foreach (var mesh in cubemodel.Meshes)
                 {
                     foreach (BasicEffect effect in mesh.Effects)
                     {
-                        if (cubes[i].getDistance(sphere) > 11)
-                        {
+                        cubes[i].checkMove(sphere);
 
-                        }
-                        else if (cubes[i].getDistance(sphere) < 10)
-                        { 
-                        
-                        }
                         effect.World = cubes[i].world;
                         effect.View = view;
                         effect.Projection = projection;
