@@ -12,12 +12,15 @@ namespace Assignment_1
         private SpriteBatch spriteBatch;
         private SpriteFont Arial12;
 
+        private Texture green;
+
         private Matrix view = Matrix.Identity;
         private Matrix projection = Matrix.Identity;
 
         Sphere sphere;
 
         Cube[] cubes = new Cube[10];
+        int tagged = 0;
 
         public Game1()
         {
@@ -30,6 +33,9 @@ namespace Assignment_1
 
         protected override void Initialize()
         {
+            spriteBatch = new SpriteBatch(GraphicsDevice);
+            Arial12 = Content.Load<SpriteFont>("Arial12");
+
             spheremodel = Content.Load<Model>("Sphere");
             cubemodel = Content.Load<Model>("Assignment1Cube");
 
@@ -67,6 +73,12 @@ namespace Assignment_1
         {
             GraphicsDevice.Clear(Color.Black);
 
+            string teststr = "Tagged: " + tagged;
+
+            spriteBatch.Begin();
+            spriteBatch.DrawString(Arial12, teststr, new Vector2(10, 10), Color.Orange);
+            spriteBatch.End();
+
             #region ControlSphere
             /*if(Keyboard.GetState().IsKeyDown(Keys.W)) { world *= Matrix.CreateTranslation(0, 0, -10f) * gameTime.; }
             if (Keyboard.GetState().IsKeyDown(Keys.A)) { world *= Matrix.CreateTranslation(-10f, 0, 0); }
@@ -90,14 +102,16 @@ namespace Assignment_1
                 mesh.Draw();
             }
 
-            for (int i = 0; i < 1; i++) 
+            for (int i = 0; i < 10; i++)
             {
+                cubes[i].checkMove(sphere);
+                if (cubes[i].checkTagged(sphere)) { tagged += 1; }
                 foreach (var mesh in cubemodel.Meshes)
                 {
                     foreach (BasicEffect effect in mesh.Effects)
                     {
-                        cubes[i].checkMove(sphere);
-
+                        //import texture and set it to the cube here
+                        //effect.Texture =
                         effect.World = cubes[i].world;
                         effect.View = view;
                         effect.Projection = projection;
