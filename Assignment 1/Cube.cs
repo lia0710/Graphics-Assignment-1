@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
@@ -47,11 +48,27 @@ namespace Assignment_1
             if (getDistance(sphere) > 11)
             {
                 //move closer
-                if (z > sphere.z) { world *= Matrix.CreateTranslation(0, 0, -speed); z -= speed; }
-                else { world *= Matrix.CreateTranslation(0, 0, speed); z += speed; }
+                if (z > sphere.z) 
+                { 
+                    world *= Matrix.CreateTranslation(0, 0, -speed); z -= speed;
+                    //checkAngle(sphere);
+                }
+                else 
+                { 
+                    world *= Matrix.CreateTranslation(0, 0, speed); z += speed;
+                    //checkAngle(sphere);
+                }
 
-                if (x > sphere.x) { world *= Matrix.CreateTranslation(-speed, 0, 0); x -= speed; }
-                else { world *= Matrix.CreateTranslation(speed, 0, 0); x += speed; }
+                if (x > sphere.x) 
+                { 
+                    world *= Matrix.CreateTranslation(-speed, 0, 0); x -= speed;
+                    //checkAngle(sphere);
+                }
+                else 
+                { 
+                    world *= Matrix.CreateTranslation(speed, 0, 0); x += speed;
+                    //checkAngle(sphere);
+                }
             }
             else if (getDistance(sphere) < 10)
             {
@@ -62,6 +79,14 @@ namespace Assignment_1
                 if (x > sphere.x) { world *= Matrix.CreateTranslation(speed, 0, 0); x += speed; }
                 if (x < sphere.x) { world *= Matrix.CreateTranslation(-speed, 0, 0); x -= speed; }
             }
+        }
+
+        public void checkAngle(Sphere sphere)
+        {
+            //tan-1 (sphere.y - cube.y) / (sphere.x - cube.y)
+            double angle = Math.Atan((double)((z - sphere.z) / (x- sphere.x)));
+            float radians = (float)angle * (float)Math.PI/180;
+            world *= Matrix.CreateRotationY(radians);
         }
 
         public bool checkTagged(Sphere sphere)

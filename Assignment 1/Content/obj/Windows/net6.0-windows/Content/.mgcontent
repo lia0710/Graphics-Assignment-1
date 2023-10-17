@@ -4,11 +4,17 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
-    <File>C:/Users/admin/OneDrive/Desktop/Homework/Graphics/Graphics-Assignment-1/Assignment 1/Content/Arial12.spritefont</File>
-    <File>C:/Users/admin/OneDrive/Desktop/Homework/Graphics/Graphics-Assignment-1/Assignment 1/Content/Assignment1Cube.fbx</File>
-    <File>C:/Users/admin/OneDrive/Desktop/Homework/Graphics/Graphics-Assignment-1/Assignment 1/Content/Sphere.fbx</File>
+    <File>C:/Users/fishewil/Desktop/Computer Graphics and Animation/Assignment 1/Graphics-Assignment-1/Assignment 1/Content/Arial12.spritefont</File>
+    <File>C:/Users/fishewil/Desktop/Computer Graphics and Animation/Assignment 1/Graphics-Assignment-1/Assignment 1/Content/Assignment1Cube.fbx</File>
+    <File>C:/Users/fishewil/Desktop/Computer Graphics and Animation/Assignment 1/Graphics-Assignment-1/Assignment 1/Content/MyShader.fx</File>
+    <File>C:/Users/fishewil/Desktop/Computer Graphics and Animation/Assignment 1/Graphics-Assignment-1/Assignment 1/Content/Pure Green.png</File>
+    <File>C:/Users/fishewil/Desktop/Computer Graphics and Animation/Assignment 1/Graphics-Assignment-1/Assignment 1/Content/Pure Red.jpg</File>
+    <File>C:/Users/fishewil/Desktop/Computer Graphics and Animation/Assignment 1/Graphics-Assignment-1/Assignment 1/Content/Sphere.fbx</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

@@ -11,9 +11,11 @@ namespace Assignment_1
         private Model cubemodel;
         private SpriteBatch spriteBatch;
         private SpriteFont Arial12;
+        private Effect myShader;
 
         private Texture green;
 
+        private Matrix world = Matrix.Identity;
         private Matrix view = Matrix.Identity;
         private Matrix projection = Matrix.Identity;
 
@@ -33,12 +35,15 @@ namespace Assignment_1
 
         protected override void Initialize()
         {
+            myShader = Content.Load<Effect>("MyShader");
+            green = Content.Load<Texture2D>("Pure Green");
             spriteBatch = new SpriteBatch(GraphicsDevice);
             Arial12 = Content.Load<SpriteFont>("Arial12");
 
             spheremodel = Content.Load<Model>("Sphere");
             cubemodel = Content.Load<Model>("Assignment1Cube");
 
+            world = Matrix.CreateTranslation(new Vector3(0, 0, 0));
             view = Matrix.CreateLookAt(new Vector3(0, 40, 10), new Vector3(0, 0, 0), Vector3.Up);
             projection = Matrix.CreatePerspectiveFieldOfView(MathHelper.ToRadians(45), device.GraphicsDevice.Viewport.AspectRatio, 0.1f, 100f);
 
@@ -71,6 +76,9 @@ namespace Assignment_1
 
         protected override void Draw(GameTime gameTime)
         {
+            myShader.Parameters["WorldViewProjection"].SetValue(world * view * projection);
+            myShader.Parameters["Texture"].SetValue(green);
+
             GraphicsDevice.Clear(Color.Black);
 
             string teststr = "Tagged: " + tagged;
@@ -110,8 +118,9 @@ namespace Assignment_1
                 {
                     foreach (BasicEffect effect in mesh.Effects)
                     {
+                        //cubes[i].world *= Matrix.CreateRotationY(0.8f * (float)gameTime.ElapsedGameTime.TotalSeconds);
                         //import texture and set it to the cube here
-                        //effect.Texture =
+                        effect.Texture = (Texture2D)green;
                         effect.World = cubes[i].world;
                         effect.View = view;
                         effect.Projection = projection;
