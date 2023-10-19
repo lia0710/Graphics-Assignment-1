@@ -17,7 +17,7 @@ namespace Assignment_1
         public float x = 0;
         public float z = 0;
         float speed = 0.05f;
-        bool tagged = false;
+        public bool tagged = false;
 
         public Cube() 
         {

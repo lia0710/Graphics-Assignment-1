@@ -13,7 +13,8 @@ namespace Assignment_1
         private SpriteFont Arial12;
         private Effect myShader;
 
-        private Texture green;
+        private Vector3 red = new Vector3(254, 0, 0);
+        private Vector3 green = new Vector3(0, 254, 0);
 
         private Matrix world = Matrix.Identity;
         private Matrix view = Matrix.Identity;
@@ -36,7 +37,6 @@ namespace Assignment_1
         protected override void Initialize()
         {
             myShader = Content.Load<Effect>("MyShader");
-            green = Content.Load<Texture2D>("Pure Green");
             spriteBatch = new SpriteBatch(GraphicsDevice);
             Arial12 = Content.Load<SpriteFont>("Arial12");
 
@@ -68,8 +68,6 @@ namespace Assignment_1
         {
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
-
-            // TODO: Add your update logic here
             
             base.Update(gameTime);
         }
@@ -77,7 +75,6 @@ namespace Assignment_1
         protected override void Draw(GameTime gameTime)
         {
             myShader.Parameters["WorldViewProjection"].SetValue(world * view * projection);
-            myShader.Parameters["Texture"].SetValue(green);
 
             GraphicsDevice.Clear(Color.Black);
 
@@ -118,18 +115,22 @@ namespace Assignment_1
                 {
                     foreach (BasicEffect effect in mesh.Effects)
                     {
-                        //cubes[i].world *= Matrix.CreateRotationY(0.8f * (float)gameTime.ElapsedGameTime.TotalSeconds);
-                        //import texture and set it to the cube here
-                        effect.Texture = (Texture2D)green;
                         effect.World = cubes[i].world;
                         effect.View = view;
                         effect.Projection = projection;
+                        if (!cubes[i].tagged) 
+                        {
+                            effect.DiffuseColor = green;
+                        }
+                        else 
+                        {
+                            effect.DiffuseColor = red;
+                        }
                     }
                     mesh.Draw();
                 }
             }
 
-            // TODO: Add your drawing code here
 
             base.Draw(gameTime);
         }
